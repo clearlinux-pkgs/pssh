@@ -4,7 +4,7 @@
 #
 Name     : pssh
 Version  : 2.3.1
-Release  : 7
+Release  : 8
 URL      : https://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 Source0  : https://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 Summary  : Parallel version of OpenSSH and related tools
