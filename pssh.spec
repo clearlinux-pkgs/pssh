@@ -4,7 +4,7 @@
 #
 Name     : pssh
 Version  : 2.3.1
-Release  : 9
+Release  : 10
 URL      : https://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 Source0  : https://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 Summary  : Parallel version of OpenSSH and related tools
@@ -41,13 +41,16 @@ python components for the pssh package.
 %setup -q -n pssh-2.3.1
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484524112
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484524112
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
