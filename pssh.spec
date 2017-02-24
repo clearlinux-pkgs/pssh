@@ -4,13 +4,14 @@
 #
 Name     : pssh
 Version  : 1.0.0b2
-Release  : 11
+Release  : 12
 URL      : https://github.com/ParallelSSH/parallel-ssh/archive/1.0.0b2.tar.gz
 Source0  : https://github.com/ParallelSSH/parallel-ssh/archive/1.0.0b2.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
 Requires: pssh-python
+Requires: paramiko
 BuildRequires : paramiko
 BuildRequires : pbr
 BuildRequires : pip
@@ -37,12 +38,12 @@ python components for the pssh package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484794118
+export SOURCE_DATE_EPOCH=1487895389
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1484794118
+export SOURCE_DATE_EPOCH=1487895389
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
